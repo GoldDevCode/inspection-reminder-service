@@ -1,0 +1,13 @@
+services:
+  postgres:
+    container_name: vehicle_info_db
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: dev_password
+      POSTGRES_DB: vehicle_info_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
